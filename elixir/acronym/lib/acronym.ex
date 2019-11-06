@@ -5,7 +5,5 @@ defmodule Acronym do
   """
   @spec abbreviate(String.t()) :: String.t()
   def abbreviate(string) do
-    Regex.replace(~r/[^A-Za-z]([a-z])/, string, fn(s) -> String.upcase(s) end)
-    |> String.replace(~r/[^A-Z]/, "")
   end
 end

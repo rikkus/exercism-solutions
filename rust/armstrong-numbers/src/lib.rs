@@ -1,10 +1,8 @@
 pub fn is_armstrong_number(num: u32) -> bool {
     let digits = digits(num);
+    let number_of_digits = digits.len() as u32;
 
-    use std::convert::TryInto;
-    let number_of_digits = digits.len().try_into().unwrap();
-
-    digits
+    return digits
         .iter()
         .fold(0, |total, n| total + n.pow(number_of_digits))
         == num;
@@ -20,5 +18,5 @@ fn digits(num: u32) -> Vec<u32> {
             break;
         }
     }
-    digits;
+    return digits;
 }
